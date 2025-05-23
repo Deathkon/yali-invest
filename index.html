@@ -1,0 +1,445 @@
+<!--
+  Alta-invest: Main HTML file for Yali Labs' ALTA initiative
+  - Uses Tailwind CSS, AOS, Chart.js, FontAwesome, Google Fonts
+  - All content, structure, and section markup is here
+  - CSS and JS are now externalized for maintainability
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Yali Labs: Pioneering African Language AI</title>
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- AOS (Animate On Scroll) -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"/>
+  <!-- Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <!-- FontAwesome -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet"/>
+  <!-- Google Fonts: Inter -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <!-- Project custom styles -->
+  <link rel="stylesheet" href="main.css">
+</head>
+<body class="bg-gray-50 text-gray-800 leading-relaxed">
+  <!-- Navigation bar: Responsive, sticky, with mobile menu -->
+  <nav class="fixed top-0 inset-x-0 bg-white shadow z-50">
+    <div class="container mx-auto flex items-center justify-between px-4 py-3 md:px-6 md:py-4">
+      <!-- Brand -->
+      <a href="#hero" class="text-2xl font-bold text-teal-700">Yali Labs</a>
+      <!-- Mobile nav toggle -->
+      <button id="nav-toggle" class="md:hidden text-teal-700 focus:outline-none" aria-label="Toggle menu">
+        <i class="fas fa-bars fa-lg"></i>
+      </button>
+      <!-- Desktop nav menu -->
+      <ul id="nav-menu" class="hidden md:flex space-x-6">
+        <li><a href="#hero" class="hover:text-teal-500">Home</a></li>
+        <li><a href="#problem" class="hover:text-teal-500">Challenge</a></li>
+        <li><a href="#solution" class="hover:text-teal-500">Solution</a></li>
+        <li><a href="#impact" class="hover:text-teal-500">Impact</a></li>
+        <li><a href="#market" class="hover:text-teal-500">Market</a></li>
+        <li><a href="#roadmap" class="hover:text-teal-500">Roadmap</a></li>
+        <li><a href="#cta" class="hover:text-teal-500">Invest</a></li>
+      </ul>
+    </div>
+    <!-- Mobile nav menu -->
+    <ul id="nav-mobile-menu" class="md:hidden hidden bg-white shadow-inner">
+      <li><a href="#hero" class="block px-4 py-2 border-b hover:bg-gray-100">Home</a></li>
+      <li><a href="#problem" class="block px-4 py-2 border-b hover:bg-gray-100">Challenge</a></li>
+      <li><a href="#solution" class="block px-4 py-2 border-b hover:bg-gray-100">Solution</a></li>
+      <li><a href="#impact" class="block px-4 py-2 border-b hover:bg-gray-100">Impact</a></li>
+      <li><a href="#market" class="block px-4 py-2 border-b hover:bg-gray-100">Market</a></li>
+      <li><a href="#roadmap" class="block px-4 py-2 border-b hover:bg-gray-100">Roadmap</a></li>
+      <li><a href="#cta" class="block px-4 py-2 hover:bg-gray-100">Invest</a></li>
+    </ul>
+  </nav>
+
+  <main class="pt-20">
+    <!-- Hero Section: Mission, logo, and funding goal -->
+    <section id="hero" class="bg-gradient-to-br from-teal-600 to-orange-500 text-white py-16 md:py-32 text-center">
+      <div class="max-w-xl mx-auto px-4 space-y-6" data-aos="fade-up">
+        <img src="https://assets-global.website-files.com/62e153771603837219812929/6470c45743357537799ff613_Yali%20Labs%20Logo%20Orange%20Background.png"
+             alt="Yali Labs Logo"
+             class="mx-auto h-20 rounded-md"/>
+        <h1 class="text-3xl md:text-5xl font-bold">Building Foundational AI for Africa</h1>
+        <p class="text-lg md:text-2xl font-light">Empowering learners like Amina in Kinyarwanda.</p>
+        <div class="inline-block bg-white text-teal-700 px-6 py-4 rounded-lg shadow-lg">
+          <p class="uppercase tracking-wider text-sm">Our Immediate Goal</p>
+          <p class="text-4xl font-bold">$500K</p>
+          <p class="text-sm">Seed funding to revolutionize Kinyarwanda AI</p>
+        </div>
+        <a href="#cta"
+           class="mt-6 inline-block px-8 py-3 bg-yellow-400 text-teal-800 font-semibold rounded-lg shadow hover:bg-yellow-300 transition hero-cta-glow">
+          Partner With Us
+        </a>
+      </div>
+    </section>
+    <!-- Problem Section: The AI Challenge in Africa -->
+    <section id="problem" class="py-16 md:py-24 bg-gray-100">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold text-purple-800 text-center mb-6" data-aos="fade-up">The AI Challenge in Africa</h2>
+        <p class="text-center text-gray-600 mb-12 max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="100">
+          Current AI solutions often miss Africa’s linguistic and cultural nuances. Yali Labs is bridging that gap.
+        </p>
+        <div class="flex flex-wrap -mx-3">
+          <div class="w-full sm:w-1/2 lg:w-1/4 px-3 mb-6" data-aos="fade-up" data-aos-delay="200">
+            <div class="bg-white rounded-lg shadow hover:shadow-lg transform hover:-translate-y-1 transition p-6 text-center card-hover feature-card">
+              <div class="feature-icon mb-4 text-3xl text-orange-500"><i class="fas fa-language"></i></div>
+              <h3 class="font-semibold text-lg mb-2">Language Gaps</h3>
+              <p class="text-gray-500 text-sm">Most AI models ignore African languages, leaving millions underserved.</p>
+            </div>
+          </div>
+          <div class="w-full sm:w-1/2 lg:w-1/4 px-3 mb-6" data-aos="fade-up" data-aos-delay="300">
+            <div class="bg-white rounded-lg shadow hover:shadow-lg transform hover:-translate-y-1 transition p-6 text-center card-hover feature-card">
+              <div class="feature-icon mb-4 text-3xl text-purple-500"><i class="fas fa-globe-africa"></i></div>
+              <h3 class="font-semibold text-lg mb-2">Cultural Nuance</h3>
+              <p class="text-gray-500 text-sm">AI often fails to capture local context, idioms, and values.</p>
+            </div>
+          </div>
+          <div class="w-full sm:w-1/2 lg:w-1/4 px-3 mb-6" data-aos="fade-up" data-aos-delay="400">
+            <div class="bg-white rounded-lg shadow hover:shadow-lg transform hover:-translate-y-1 transition p-6 text-center card-hover feature-card">
+              <div class="feature-icon mb-4 text-3xl text-teal-500"><i class="fas fa-database"></i></div>
+              <h3 class="font-semibold text-lg mb-2">Data Scarcity</h3>
+              <p class="text-gray-500 text-sm">Lack of high-quality, labeled data for African languages hinders progress.</p>
+            </div>
+          </div>
+          <div class="w-full sm:w-1/2 lg:w-1/4 px-3 mb-6" data-aos="fade-up" data-aos-delay="500">
+            <div class="bg-white rounded-lg shadow hover:shadow-lg transform hover:-translate-y-1 transition p-6 text-center card-hover feature-card">
+              <div class="feature-icon mb-4 text-3xl text-cyan-500"><i class="fas fa-user-graduate"></i></div>
+              <h3 class="font-semibold text-lg mb-2">Talent Pipeline</h3>
+              <p class="text-gray-500 text-sm">Limited local AI talent and resources slow innovation and adoption.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Solution Section: ALTA Solution, interactive cards, progress bar, etc. -->
+    <section id="solution" class="py-20 md:py-32 relative overflow-hidden gradient-bg">
+        <div class="absolute inset-0 pointer-events-none">
+            <div class="particle" style="left: 10%; animation-delay: 0s;"></div>
+            <div class="particle" style="left: 20%; animation-delay: 1s;"></div>
+            <div class="particle" style="left: 30%; animation-delay: 2s;"></div>
+            <div class="particle" style="left: 80%; animation-delay: 1.5s;"></div>
+            <div class="particle" style="left: 90%; animation-delay: 0.5s;"></div>
+        </div>
+
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="text-center mb-16">
+                <div class="inline-block mb-6 bounce-in">
+                    <div class="w-20 h-20 mx-auto rounded-full bg-gradient-to-r from-teal-500 to-cyan-500 flex items-center justify-center pulse-glow floating-animation">
+                        <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
+                        </svg>
+                    </div>
+                </div>
+                <h2 class="text-5xl md:text-6xl font-black text-gradient mb-6 typewriter">Our Solution: ALTA</h2>
+                <div class="max-w-4xl mx-auto">
+                    <p class="text-xl text-gray-700 leading-relaxed mb-8" style="font-family: 'Inter', sans-serif;">
+                        <span class="font-bold bg-gradient-to-r from-teal-600 to-cyan-600 bg-clip-text text-transparent">ALTA</span> 
+                        is a revolutionary suite of AI Models and AI enabling tools for African languages. We pioneered with Kinyarwanda, creating our flagship products: 
+                        <span class="font-semibold text-teal-700">ALTA Model</span> and 
+                        <span class="font-semibold text-cyan-700">ALTA Tokenizer</span>.
+                    </p>
+                    <div class="w-full bg-gray-300 rounded-full h-3 mb-8">
+                        <div class="progress-bar h-3 rounded-full" id="progressBar"></div>
+                    </div>
+                    <p class="text-sm text-gray-600" style="font-family: 'Inter', sans-serif;">Building the future of African AI - 75% Complete</p>
+                </div>
+            </div>
+
+            <div class="grid lg:grid-cols-2 gap-12 items-start">
+                <div class="relative">
+                    <div class="glass-morphism rounded-3xl p-8 card-hover">
+                        <h3 class="text-2xl font-bold mb-4 text-teal-700">ALTA Model</h3>
+                        <p class="text-gray-700 mb-4">A large language model trained natively in Kinyarwanda, designed for education, business, and government use cases.</p>
+                        <ul class="list-disc list-inside text-gray-600 space-y-2">
+                            <li>Context-aware, culturally relevant responses</li>
+                            <li>Open-source and extensible</li>
+                            <li>Optimized for low-resource environments</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="glass-morphism rounded-3xl p-8 card-hover">
+                    <h3 class="text-3xl font-bold text-center mb-8 text-gradient" style="font-family: 'Inter', sans-serif;">Why Build From Scratch?</h3>
+                    <div class="grid sm:grid-cols-2 gap-6 mb-8">
+                        <div class="interactive-card p-4 bg-white rounded-xl shadow hover:shadow-lg transition">
+                            <div class="feature-icon text-2xl text-orange-500 mb-2"><i class="fas fa-bolt"></i></div>
+                            <div class="font-semibold">Speed</div>
+                        </div>
+                        <div class="interactive-card p-4 bg-white rounded-xl shadow hover:shadow-lg transition">
+                            <div class="feature-icon text-2xl text-purple-500 mb-2"><i class="fas fa-lock"></i></div>
+                            <div class="font-semibold">Data Sovereignty</div>
+                        </div>
+                        <div class="interactive-card p-4 bg-white rounded-xl shadow hover:shadow-lg transition">
+                            <div class="feature-icon text-2xl text-teal-500 mb-2"><i class="fas fa-brain"></i></div>
+                            <div class="font-semibold">Local Innovation</div>
+                        </div>
+                        <div class="interactive-card p-4 bg-white rounded-xl shadow hover:shadow-lg transition">
+                            <div class="feature-icon text-2xl text-cyan-500 mb-2"><i class="fas fa-users"></i></div>
+                            <div class="font-semibold">Community</div>
+                        </div>
+                    </div>
+                    <div class="relative">
+                        <p class="text-gray-600 text-center">Building from scratch ensures the model is truly African-first, not an afterthought.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-16">
+                <button class="group bg-gradient-to-r from-teal-600 to-cyan-600 hover:from-teal-700 hover:to-cyan-700 text-white font-bold py-4 px-8 rounded-full text-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl" style="font-family: 'Inter', sans-serif;">
+                  Discover ALTA
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Impact Section: Seed Stage Impact -->
+    <section id="impact" class="py-16 md:py-24 bg-gray-100">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold text-orange-600 text-center mb-6" data-aos="fade-up">Seed Stage Impact</h2>
+        <p class="text-center text-gray-600 mb-12 max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="100">
+          Launch 2–3 pilot projects in Rwanda to demonstrate immediate value and iterate.
+        </p>
+        <div class="flex flex-wrap -mx-3">
+          <div class="w-full sm:w-1/2 lg:w-1/3 px-3 mb-6" data-aos="fade-up" data-aos-delay="200">
+            <div class="bg-white rounded-lg shadow p-6 card-hover">
+              <div class="feature-icon mb-4 text-3xl text-orange-500"><i class="fas fa-rocket"></i></div>
+              <h3 class="font-semibold text-lg mb-2">Pilot Projects</h3>
+              <p class="text-gray-500 text-sm">Launch 2–3 pilots in Rwanda to demonstrate immediate value and iterate.</p>
+            </div>
+          </div>
+          <div class="w-full sm:w-1/2 lg:w-1/3 px-3 mb-6" data-aos="fade-up" data-aos-delay="300">
+            <div class="bg-white rounded-lg shadow p-6 card-hover">
+              <div class="feature-icon mb-4 text-3xl text-purple-500"><i class="fas fa-sync-alt"></i></div>
+              <h3 class="font-semibold text-lg mb-2">Data Loop</h3>
+              <p class="text-gray-500 text-sm">Create a rich feedback loop for continuous improvement and localization.</p>
+            </div>
+          </div>
+          <div class="w-full sm:w-1/2 lg:w-1/3 px-3 mb-6" data-aos="fade-up" data-aos-delay="400">
+            <div class="bg-white rounded-lg shadow p-6 card-hover">
+              <div class="feature-icon mb-4 text-3xl text-teal-500"><i class="fas fa-user-friends"></i></div>
+              <h3 class="font-semibold text-lg mb-2">Talent Development</h3>
+              <p class="text-gray-500 text-sm">Grow local AI talent and foster investor confidence in African innovation.</p>
+            </div>
+          </div>
+        </div>
+        <div class="mt-8 text-center" data-aos="fade-up" data-aos-delay="500">
+          <span class="inline-block bg-yellow-400 text-gray-800 px-4 py-2 rounded-full text-sm font-semibold mr-2 mb-2">Demo Localized LLM</span>
+          <span class="inline-block bg-yellow-400 text-gray-800 px-4 py-2 rounded-full text-sm font-semibold mr-2 mb-2">Rich Data Loop</span>
+          <span class="inline-block bg-yellow-400 text-gray-800 px-4 py-2 rounded-full text-sm font-semibold mr-2 mb-2">Talent Development</span>
+          <span class="inline-block bg-yellow-400 text-gray-800 px-4 py-2 rounded-full text-sm font-semibold mb-2">Investor Confidence</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Market Section: Market Context, charts -->
+    <section id="market" class="py-16 md:py-24">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold text-purple-700 text-center mb-6" data-aos="fade-up">Market Context</h2>
+        <p class="text-center text-gray-600 mb-12 max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="100">
+          Africa’s AI market is growing ~30% annually, with 12.4M+ native Kinyarwanda speakers.
+        </p>
+        <div class="grid sm:grid-cols-2 gap-6 mb-12">
+          <div class="bg-white rounded-lg shadow p-8 text-center" data-aos="fade-up" data-aos-delay="200">
+            <p class="text-4xl font-bold text-orange-500">12.4M+</p>
+            <p class="text-gray-600">Native Kinyarwanda Speakers</p>
+          </div>
+          <div class="bg-white rounded-lg shadow p-8 text-center" data-aos="fade-up" data-aos-delay="300">
+            <p class="text-4xl font-bold text-orange-500">30%</p>
+            <p class="text-gray-600">Annual AI Market Growth</p>
+          </div>
+        </div>
+        <div class="flex flex-col items-center justify-center mb-12 w-full">
+          <div class="grid sm:grid-cols-2 gap-12 w-full max-w-5xl">
+            <div class="max-w-xl w-full chart-card flex flex-col justify-center mx-auto sm:ml-0 sm:mr-auto" data-aos="fade-up" data-aos-delay="400">
+              <h3 class="text-xl font-semibold text-center mb-4 text-purple-700">AI Market Growth (2022–2026)</h3>
+              <div class="aspect-16/9">
+                <canvas id="marketGrowthChart"></canvas>
+              </div>
+            </div>
+            <div class="max-w-md w-full chart-card flex flex-col justify-center mx-auto sm:mr-0 sm:ml-auto" data-aos="fade-up" data-aos-delay="500">
+              <h3 class="text-xl font-semibold text-center mb-4 text-purple-700">Languages in Rwanda</h3>
+              <div class="aspect-16/9">
+                <canvas id="languageChart"></canvas>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Roadmap Section: 12–18 Month Roadmap -->
+    <section id="roadmap" class="py-16 md:py-24 bg-gray-100">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold text-teal-700 text-center mb-6" data-aos="fade-up">12–18 Month Roadmap</h2>
+        <div class="space-y-8 max-w-2xl mx-auto">
+          <div class="relative pl-8" data-aos="fade-up" data-aos-delay="100">
+            <div class="absolute left-0 top-2 w-2 h-2 bg-teal-500 rounded-full"></div>
+            <div class="timeline-line absolute left-0 top-4 w-1 h-full"></div>
+            <h4 class="font-bold text-lg mb-1">Q2 2025: ALTA V1 Launch</h4>
+            <p class="text-gray-600">Release the first version of ALTA for Kinyarwanda, including model and tokenizer.</p>
+          </div>
+          <div class="relative pl-8" data-aos="fade-up" data-aos-delay="200">
+            <div class="absolute left-0 top-2 w-2 h-2 bg-purple-500 rounded-full"></div>
+            <div class="timeline-line absolute left-0 top-4 w-1 h-full"></div>
+            <h4 class="font-bold text-lg mb-1">Q3 2025: Pilot Deployments</h4>
+            <p class="text-gray-600">Deploy ALTA in 2–3 pilot projects in Rwanda (education, business, government).</p>
+          </div>
+          <div class="relative pl-8" data-aos="fade-up" data-aos-delay="300">
+            <div class="absolute left-0 top-2 w-2 h-2 bg-orange-500 rounded-full"></div>
+            <div class="timeline-line absolute left-0 top-4 w-1 h-full"></div>
+            <h4 class="font-bold text-lg mb-1">Q4 2025: Data Loop & Feedback</h4>
+            <p class="text-gray-600">Iterate on model and tools using real-world feedback and data.</p>
+          </div>
+          <div class="relative pl-8" data-aos="fade-up" data-aos-delay="400">
+            <div class="absolute left-0 top-2 w-2 h-2 bg-cyan-500 rounded-full"></div>
+            <h4 class="font-bold text-lg mb-1">2026: Expansion</h4>
+            <p class="text-gray-600">Expand ALTA to more African languages and new sectors.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Team Section: Core Team -->
+    <section id="team" class="py-16 md:py-24">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold text-orange-600 text-center mb-6" data-aos="fade-up">Core Team</h2>
+        <p class="text-center text-gray-600 mb-12 max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="100">
+          A passionate team of AI engineers, linguists, and data experts.
+        </p>
+        <div class="flex flex-wrap -mx-3">
+          <div class="w-full sm:w-1/2 lg:w-1/4 px-3 mb-6" data-aos="fade-up" data-aos-delay="200">
+            <div class="bg-white rounded-lg shadow p-6 text-center">
+              <h3 class="font-semibold text-orange-600 mb-1">Murwanashyaka Philbert</h3>
+              <p class="text-xs text-purple-700 font-semibold">Head of Yali Labs</p>
+              <p class="text-gray-600 text-sm mt-1">Strategy, Partnerships, Fundraising</p>
+            </div>
+          </div>
+          <div class="w-full sm:w-1/2 lg:w-1/4 px-3 mb-6" data-aos="fade-up" data-aos-delay="300">
+            <div class="bg-white rounded-lg shadow p-6 text-center">
+              <h3 class="font-semibold text-orange-600 mb-1">Niyibizi Schadrack</h3>
+              <p class="text-xs text-purple-700 font-semibold">Head of AI</p>
+              <p class="text-gray-600 text-sm mt-1">Model Development, Technical Execution</p>
+            </div>
+          </div>
+          <div class="w-full sm:w-1/2 lg:w-1/4 px-3 mb-6" data-aos="fade-up" data-aos-delay="400">
+            <div class="bg-white rounded-lg shadow p-6 text-center">
+              <h3 class="font-semibold text-orange-600 mb-1">Hirwa Gael</h3>
+              <p class="text-xs text-purple-700 font-semibold">Head of Data Engineering</p>
+              <p class="text-gray-600 text-sm mt-1">Data Acquisition & Cleaning</p>
+            </div>
+          </div>
+          <div class="w-full sm:w-1/2 lg:w-1/4 px-3 mb-6" data-aos="fade-up" data-aos-delay="500">
+            <div class="bg-white rounded-lg shadow p-6 text-center">
+              <h3 class="font-semibold text-orange-600 mb-1">Uwisoneye Yvette</h3>
+              <p class="text-xs text-purple-700 font-semibold">Data Scientist</p>
+              <p class="text-gray-600 text-sm mt-1">Analysis & Evaluation</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Future Section: Future Vision -->
+    <section id="future" class="py-16 md:py-24 bg-gray-100">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold text-teal-700 text-center mb-6" data-aos="fade-up">Future Vision</h2>
+        <p class="text-center text-gray-600 mb-12 max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="100">
+          Expand to other African languages and build local AI infrastructure.
+        </p>
+        <div class="flex flex-wrap -mx-3">
+          <div class="w-full sm:w-1/2 px-3 mb-6" data-aos="fade-up" data-aos-delay="200">
+            <div class="bg-white rounded-lg shadow p-6">
+              <i class="fas fa-globe-africa fa-2x text-purple-600 mb-3"></i>
+              <h3 class="text-xl font-semibold text-teal-700 mb-2">Scaling to More Languages</h3>
+              <p class="text-gray-600 text-sm">Post-seed, extend ALTA to Swahili, Amharic, and beyond.</p>
+            </div>
+          </div>
+          <div class="w-full sm:w-1/2 px-3 mb-6" data-aos="fade-up" data-aos-delay="300">
+            <div class="bg-white rounded-lg shadow p-6">
+              <i class="fas fa-server fa-2x text-purple-600 mb-3"></i>
+              <h3 class="text-xl font-semibold text-teal-700 mb-2">Local AI Infrastructure</h3>
+              <p class="text-gray-600 text-sm">Build compute resources in-country for sovereignty & scale.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section: Call to Action, contact modal -->
+    <section id="cta" class="bg-purple-700 text-white py-16 md:py-24 text-center">
+      <div class="container mx-auto px-4 max-w-2xl" data-aos="fade-up">
+        <h2 class="text-3xl md:text-4xl font-bold mb-4">Invest in the Future of African AI</h2>
+        <p class="text-lg md:text-xl mb-8">
+          Seeking <span class="font-semibold text-yellow-400">$500,000 in seed funding</span> to complete ALTA V1 and pilots.
+        </p>
+        <div class="grid sm:grid-cols-2 gap-6 mb-10 text-left">
+          <div class="bg-white bg-opacity-20 p-4 rounded-lg">
+            <h4 class="font-semibold text-lg text-yellow-400 mb-2">Use of Proceeds</h4>
+            <ul class="list-disc list-inside text-sm space-y-1">
+              <li>Team Expansion: 40–50%</li>
+              <li>Data Acquisition: 15–20%</li>
+              <li>Compute Resources: 20–25%</li>
+              <li>Pilot Execution: 5–10%</li>
+              <li>Ops & Contingency: 5–10%</li>
+            </ul>
+          </div>
+          <div class="bg-white bg-opacity-20 p-4 rounded-lg">
+            <h4 class="font-semibold text-lg text-yellow-400 mb-2">Success Metrics</h4>
+            <ul class="list-disc list-inside text-sm space-y-1">
+              <li>ALTA V1 at benchmark accuracy</li>
+              <li>2–3 successful pilots</li>
+              <li>MOUs with partners</li>
+              <li>Clear Series A roadmap</li>
+            </ul>
+          </div>
+        </div>
+        <button onclick="document.getElementById('contact-modal').classList.remove('hidden')"
+                class="px-8 py-3 bg-yellow-400 text-purple-800 font-bold rounded-lg shadow hover:bg-yellow-300 transition">
+          Partner With Us
+        </button>
+        <p class="mt-6 text-sm">Contact: philbert@yalilabs.com | yalilabs.com</p>
+      </div>
+
+      <div id="contact-modal" class="hidden fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4">
+        <div class="bg-white rounded-lg max-w-md w-full p-6 text-gray-800"> <h3 class="text-xl font-bold text-teal-700 mb-4">Join the AI Revolution</h3>
+          <form class="space-y-4">
+            <input type="text" placeholder="Name" class="w-full border rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-orange-400 text-gray-800"/>
+            <input type="email" placeholder="Email" class="w-full border rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-orange-400 text-gray-800"/>
+            <textarea placeholder="Message" rows="4" class="w-full border rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-orange-400 text-gray-800"></textarea>
+            <button type="submit" class="w-full bg-orange-500 text-white py-2 rounded hover:bg-orange-400 transition">Send</button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer: Social links, copyright -->
+  <footer class="bg-gray-800 text-gray-400 text-sm text-center py-6">
+    <div class="flex justify-center space-x-4 mb-4">
+      <a href="#hero" class="hover:text-white">Home</a>
+      <a href="#solution" class="hover:text-white">Solution</a>
+      <a href="#cta" class="hover:text-white">Invest</a>
+    </div>
+    <div class="flex justify-center space-x-4 mb-2">
+      <a href="#" class="hover:text-white"><i class="fab fa-twitter"></i></a>
+      <a href="#" class="hover:text-white"><i class="fab fa-linkedin"></i></a>
+    </div>
+    <p>© <span id="year"></span> Yali Labs. All Rights Reserved.</p>
+  </footer>
+
+  <!-- Scroll-to-top button -->
+  <button id="scrollTopBtn" title="Back to top" aria-label="Back to top">
+    <i class="fas fa-chevron-up"></i>
+  </button>
+
+  <!-- External JS libraries -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <!-- Project custom scripts -->
+  <script src="script.js"></script>
+</body>
+</html>
